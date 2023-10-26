@@ -49,13 +49,16 @@ Retrieves:
 - Adding monsters to locations
 - Removing monsters from locations
 - Browse monsters from list / search for monsters
+- Store campaigns/locations/monsters in database
 
 ## Stretch Goals
 
+- Fluid access to information (reduce separate pages for information: cards, accordion, etc)
 - Keep track of health for individual monster instances
 - Add other encounters/events: friendly-npc? shopkeeper, innkeeper, etc
--
+- Custom visuals for nav/buttons/etc
 
 ## Potential Roadblocks
 
-
+- Organizing the data retrieved from the API
+- Displaying data in an efficient manner
