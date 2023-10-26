@@ -4,7 +4,7 @@ const passport = require('passport');
 const indexRouter = require("../controllers/index.js")
 
 router.get('/', indexRouter.index);
-
+router.get('')
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   // Which passport strategy is being used?

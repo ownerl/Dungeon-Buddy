@@ -1,24 +1,61 @@
-# Project 2 oAuth Template
+# Dungeon Buddy
 
-Use this repo as the base for your project 2.
+Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of events in their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations.
 
-## Getting Started
+## API
 
-* clone this repo (no forking needed) and cd into the new directory
-* run `rm -rf .git` to remove the git history
-* run `git init` to create a new git history
-* run `git add .` and `git commit -m "init commit"` to create the first commit of the repo 
-* create a new repo on github and follow the instructions to push an existing repository from the command line
-* run `npm i` to install the required packages
-* touch a `.env` file and add the following to it:
+Dungeon Buddy will use the D&D 5e API to retrieve information on monsters.
 
-```shell
-DATABASE_URL= < copy mongo uri from atlas / previous project >
-GOOGLE_CLIENT_ID= < copy from google cloud devs / previous project >
-GOOGLE_SECRET=< copy from google cloud devs / previous project >
-GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
-SECRET="can be any string"
+Example:
 ```
-* run `nodemon` to test your app!
+const ROOT_URL = 'https://www.dnd5eapi.co'
+fetch(`${ROOT_URL}/api/monsters/aboleth`)
+```
+Retrieves:
+```
+{
+    "index": "aboleth",
+    "name": "Aboleth",
+    "size": "Large",
+    "type": "aberration",
+    "alignment": "lawful evil",
+    ...
+}
+```
 
-Use this readme as your project pitch! 
+## Tech Required
+
+- HTML/CSS
+- JavaScript
+- MongoDB
+- Mongoose
+- Node.js
+- Express
+- Passport
+
+## Wireframes
+
+
+
+## MVP Goal
+
+- Thematically appropriate page design
+- Log users in
+- Creation of campaigns
+- Creation of locations within campaigns
+- Nesting locations within locations
+- Removing locations from campaigns
+- Removing locations from other locations
+- Adding monsters to locations
+- Removing monsters from locations
+- Browse monsters from list / search for monsters
+
+## Stretch Goals
+
+- Keep track of health for individual monster instances
+- Add other encounters/events: friendly-npc? shopkeeper, innkeeper, etc
+-
+
+## Potential Roadblocks
+
+

@@ -10,5 +10,14 @@
 		<img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
 	<% } %>
 <% } %>
-
+<ul>
+	<% monsters.forEach(item => { %>
+		<li>
+			<%= item %> | 
+			<%=// item.index %> | 
+			<%=// item.name %> | 
+			<%=// item.url %>
+		</li>
+	<% }) %>
+</ul>
 <%- include('./partials/footer') %>
