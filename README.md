@@ -33,6 +33,14 @@ Retrieves:
 - Express
 - Passport
 
+## ERD
+
+!(public/images/Dungeon Buddy Database.pdf "ERD")
+
+## RESTful Routing Chart
+
+
+
 ## Wireframes
 
 

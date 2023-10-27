@@ -13,10 +13,9 @@
 <ul>
 	<% monsters.forEach(item => { %>
 		<li>
-			<%= item %> | 
-			<%=// item.index %> | 
-			<%=// item.name %> | 
-			<%=// item.url %>
+			<%= item.index %> | 
+			<a href="https://www.dnd5eapi.co<%= item.url %>"><%= item.name %></a> | 
+			<%= item.url %>
 		</li>
 	<% }) %>
 </ul>
