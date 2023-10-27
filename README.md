@@ -35,7 +35,7 @@ Retrieves:
 
 ## ERD
 
-!(public/images/Dungeon Buddy Database.pdf "ERD")
+![](public/images/Dungeon Buddy Database.pdf "ERD")
 
 ## RESTful Routing Chart
 
