@@ -63,7 +63,7 @@ Retrieves:
 ![main page wireframe](public/images/dbwireframe1.png "wireframe")
 ![user's campaigns page wireframe](public/images/dbwireframe2.png "wireframe")
 ![campaign page wireframe](public/images/dbwireframe3.png "wireframe")
-![location wireframe](public/images/dbwireframe4.png "wireframe")
+![location wireframe](public/images/dbwireframe5.png "wireframe")
 
 ## MVP Goal
 
@@ -85,6 +85,7 @@ Retrieves:
 - Keep track of health for individual monster instances
 - Add other encounters/events: friendly-npc? shopkeeper, innkeeper, etc
 - Custom visuals for nav/buttons/etc
+- locations within locations
 
 ## Potential Roadblocks
 
