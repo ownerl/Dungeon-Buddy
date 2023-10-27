@@ -2,10 +2,10 @@ module.exports = {
   index
 }
 
-const ROOT_URL = 'https://www.dnd5eapi.co'
+const ROOT_URL = 'https://api.open5e.com/v1'
 
 function index(req, res) {
-  fetch(`${ROOT_URL}/api/monsters/`)
+  fetch(`${ROOT_URL}/monsters/?limit=2439`)
   .then(res => res.json())
   .then(monstas => {
     console.log(monstas, typeof monstas, ' type of thingy')

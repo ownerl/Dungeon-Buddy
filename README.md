@@ -4,7 +4,7 @@ Dungeon Buddy is a complementary web-app for dunegon masters to help plan out an
 
 ## API
 
-Dungeon Buddy will use the D&D 5e API to retrieve information on monsters.
+Dungeon Buddy will use the Open5e API to retrieve information on monsters.
 
 Example:
 ```
@@ -39,7 +39,24 @@ Retrieves:
 
 ## RESTful Routing Chart
 
-
+| HTTP METHOD (_Verb_) | URL (_Nouns_)                      | CRUD        | Response                                                             | Notes          |
+| -------------------- | ---------------------------------- | ----------- | -------------------------------------------------------------------- | -------------- |
+| `users`              |                                    |             |                                                                      |                |
+| GET                  | `/users`                           | READ        | array of users                                                       | admin required |
+| GET                  | `/auth/google`                     | READ        | offload login to google                                              |                |
+| GET                  | `/auth2callback`                   | READ/CREATE | select in or add user to database after successful google oauth      |                |
+| DELETE               | `/users/:userId`                   | DESTROY     | destroy user with id of :userId                                      |                |
+| GET                  | `/users/:userId`                   | READ        | array of campaigns made by user with id of :userId & basic user info |                |
+| POST                 | `/users/:userdId/campaigns`        | CREATE      | create a campaign under user with id of :userId                      |                |
+| `campaigns`          |                                    |             |                                                                      |                |
+| GET                  | `/campaigns/:campaignId`           | READ        | one campaign with id of :campaignId                                  |                |
+| DELETE               | `/campaigns/:campaignId`           | DESTROY     | destroy campaign with id of :campaignId                              |                |
+| GET                  | `/campaigns/:campaignId`           | READ        | array of locations                                                   |                |
+| POST                 | `/campaigns/:campaignId/locations` | CREATE      | create a location under campaign with id of :campaignId              |                |
+| `locations`          |                                    |             |                                                                      |                |
+| DELETE               | `/locations/:locationId`           | DESTROY     | destroy genre from array of genres                                   |                |
+| GET                  | `/locations/:locationId`           | READ        | array of locations (sub-locations) & array of monsters               |                |
+| POST                 | `/locations/:locationId`           | CREATE      | add monster to array of monsters                                     |                |
 
 ## Wireframes
 
