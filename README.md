@@ -60,7 +60,10 @@ Retrieves:
 
 ## Wireframes
 
-
+![main page wireframe](public/images/dbwireframe1.png "wireframe")
+![user's campaigns page wireframe](public/images/dbwireframe2.png "wireframe")
+![campaign page wireframe](public/images/dbwireframe3.png "wireframe")
+![location wireframe](public/images/dbwireframe4.png "wireframe")
 
 ## MVP Goal
 
