@@ -4,19 +4,11 @@
 
 <% if (!user) { %>
 	<p>please login to continue</p>
+	<img src="<%= hero %>" alt="hero image">
 <% } else { %>
 	<p>Welcome, <%= user.name %> <%= user.email %></p>
 	<% if (user.avatar) { %>
 		<img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
 	<% } %>
 <% } %>
-<ul>
-	<% monsters.forEach(item => { %>
-		<li>
-			<%= item.index %> | 
-			<a href="https://www.dnd5eapi.co<%= item.url %>"><%= item.name %></a> | 
-			<%= item.url %>
-		</li>
-	<% }) %>
-</ul>
 <%- include('./partials/footer') %>

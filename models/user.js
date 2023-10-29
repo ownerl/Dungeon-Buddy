@@ -1,17 +1,23 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  name: String,
-  googleId: {
-    type: String,
-    required: true
-  },
-  email: String,
-  avatar: String
-}, {
-  timestamps: true
-});
+const userSchema = new Schema(
+    {
+        name: String,
+        googleId: {
+            type: String,
+            required: true,
+        },
+        email: String,
+        avatar: String,
+        campaigns: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Campaign'
+        }]
+    },
+    {
+        timestamps: true,
+    }
+);
 
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
