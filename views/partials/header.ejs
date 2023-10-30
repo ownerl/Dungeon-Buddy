@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= title %></title>
+  <title>Dungeon Buddy</title>
 </head>
 <body>
   <nav>
     <% if (user) { %>
       <a href="/logout">LOG OUT</a>
-      <a href="/campaigns">CAMPAIGNS</a>
       <a href="/locations">LOCATIONS</a>
       <a href="/users">USERS</a>
     <% } else { %>
@@ -18,4 +17,4 @@
     <% } %>
   </nav>
   <main>
-    <h1><%= title %></h1>
+

@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const monsterNames = new Schema(
+const monsterNameSchema = new Schema(
     {
         name: String,
     }
 );
 
-module.exports = mongoose.model("MonsterName", monsterNames);
+module.exports = mongoose.model("MonsterName", monsterNameSchema);

@@ -2,9 +2,30 @@
 
     <h1><%= title %></h1>
     <h3>USERS YAYYYY</h3>
-    <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+    <form id="deleteUser" action="/users/<%= user._id %>?_method=DELETE" method="POST">
         <h4>Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h4>
         <input type="submit" value="DELETE" class="deleteUser">
     </form>
-
+    <form action="/users/<%= user._id %>/campaigns" method="POST">
+        <h3>Make new campaign</h3>
+        <h4>Title: </h4>
+        <input name="campaignTitle" id="campaignTitle" type="text" placeholder="Title" required>
+        <h4>Description: </h4>
+        <textarea name="campaignDescription" id="campaignDescription" placeholder="Description" required cols="30" rows="10"></textarea>
+        <br>
+        <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+        <br>
+        <input type="submit" value="Create new campaign">
+    </form>
+    <div id="campaignList">
+        <ul>
+            <% campaigns.forEach(campaign => { %>
+                <li>
+                    <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
+                    <br>
+                    <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 <%- include('../partials/footer') %>

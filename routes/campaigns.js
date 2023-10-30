@@ -5,7 +5,6 @@ const campaignsController = require('../controllers/campaigns.js');
 const ensureLogin = require('../config/ensureLogin.js');
 
 
-router.get('/', ensureLogin, campaignsController.index);
-router.get('/:campaignId', ensureLogin, campaignsController.show);
+router.get('/:campaignId', ensureLogin, campaignsController.index);
 
 module.exports = router;

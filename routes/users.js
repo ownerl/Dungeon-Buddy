@@ -6,7 +6,9 @@ const ensureLogin = require('../config/ensureLogin.js');
 
 router.get('/', ensureLogin, usersController.index);
 
-router.delete('/:userId', ensureLogin, usersController.delete)
+router.delete('/:userId', ensureLogin, usersController.delete);
+
+router.post('/:userId/campaigns', ensureLogin, usersController.create);
 
 
 
