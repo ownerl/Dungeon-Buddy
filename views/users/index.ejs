@@ -2,5 +2,9 @@
 
     <h1><%= title %></h1>
     <h3>USERS YAYYYY</h3>
+    <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+        <h4>Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h4>
+        <input type="submit" value="DELETE" class="deleteUser">
+    </form>
 
 <%- include('../partials/footer') %>

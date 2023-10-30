@@ -5,6 +5,9 @@ const usersController = require('../controllers/users.js');
 const ensureLogin = require('../config/ensureLogin.js');
 
 router.get('/', ensureLogin, usersController.index);
-//router.get('/users/:userId', ensureLogin, usersController.index)
+
+router.delete('/:userId', ensureLogin, usersController.delete)
+
+
 
 module.exports = router;
