@@ -1,17 +1,32 @@
 const MonsterName = require('../models/monsterNames');
+const Campaign = require('../models/campaign');
 
 module.exports = {
-    index
+    index,
+    delete: deleteLocation,
 }
-
-const ROOT_URL = 'https://api.open5e.com/v1';
 
 async function index(req, res) {
     let monsterNames = await MonsterName.find({});
-    //console.log(monstas.results[3].name, typeof monstas.results[3].name, ' type of thingy')
-    // res.json(monstas)
+    let campaign = await Campaign.findOne({ _id: req.params.campaignId })
+    let location = null;
+    campaign.locations.forEach(item => 
+        {
+            if (item._id.toString() === req.params.locationId) {
+                console.log('matchhhh')
+                location = item;
+            }
+        }
+    );
+    // console.log('campaign ====> ', campaign)
+    // console.log('location ====> ', location)
     res.render("locations/index", {
-        title: "Homepage",
+        location,
+        campaign,
         monsters: monsterNames,
     });
+}
+
+async function deleteLocation(req, res) {
+
 }

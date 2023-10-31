@@ -8,7 +8,7 @@ module.exports = {
 
 async function index(req, res) {
     let campaign = await Campaign.findById( req.params.campaignId );
-    console.log('LOG OF CAMPAIGN ---> ', campaign);
+    //console.log('LOG OF CAMPAIGN ---> ', campaign);
     res.render("campaigns/index", {
         campaign,
     });
@@ -22,9 +22,15 @@ async function deleteCampaign(req, res) {
 
 async function create(req, res) {
     let campaign = await Campaign.findById( req.params.campaignId );
-    console.log(req.body);
-    console.log(req.body.locationTitle);
-    campaign.locations.push({ locationDescription: req.body.locationDescription });
+    // console.log(req.body);
+    // console.log(req.body.locationTitle);
+    campaign.locations.push({ 
+        locationTitle: req.body.locationTitle,
+        locationDescription: req.body.locationDescription,
+        locationImage: req.body.locationImage,
+        campaignId: req.params.campaignId,
+
+    });
     campaign.save();
     console.log(campaign)
     console.log(campaign.locations)

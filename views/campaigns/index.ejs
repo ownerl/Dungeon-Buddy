@@ -20,4 +20,15 @@
         <br>
         <input type="submit" value="Create new location">
     </form>
+    <div id="locationList">
+        <ul>
+            <% campaign.locations.forEach(location => { %>
+                <li>
+                    <a href="/locations/<%= campaign._id %>/<%= location._id %>"><%= location.locationTitle %></a>
+                    <br>
+                    <img src="<%= location.locationImage %>" alt="location image" style="width: 300px">
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 <%- include('../partials/footer') %>

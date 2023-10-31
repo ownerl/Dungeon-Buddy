@@ -4,6 +4,8 @@ const passport = require('passport');
 const locationsController = require('../controllers/locations.js');
 const ensureLogin = require('../config/ensureLogin.js');
 
-router.get('/', ensureLogin, locationsController.index);
+router.get('/:campaignId/:locationId', ensureLogin, locationsController.index);
+
+router.delete('/:campaignId/:locationId', ensureLogin, locationsController.delete);
 
 module.exports = router;

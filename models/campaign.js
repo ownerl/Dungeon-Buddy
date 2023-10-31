@@ -13,6 +13,7 @@ const locationsSchema = new Schema(
         locationTitle: String,
         locationDescription: String,
         locationImage: String,
+        campaignId: String,
         monsters: [monsterSchema],
     }
 )
