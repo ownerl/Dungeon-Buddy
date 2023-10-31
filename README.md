@@ -8,8 +8,8 @@ Dungeon Buddy will use the Open5e API to retrieve information on monsters.
 
 Example:
 ```
-const ROOT_URL = 'https://www.dnd5eapi.co'
-fetch(`${ROOT_URL}/api/monsters/aboleth`)
+const ROOT_URL = 'https://api.open5e.com/v1'
+fetch(`${ROOT_URL}/monsters/?slug__in=adult-bronze-dragon`)
 ```
 Retrieves:
 ```
