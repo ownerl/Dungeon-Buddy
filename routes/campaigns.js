@@ -7,4 +7,8 @@ const ensureLogin = require('../config/ensureLogin.js');
 
 router.get('/:campaignId', ensureLogin, campaignsController.index);
 
+router.delete('/:campaignId', ensureLogin, campaignsController.delete);
+
+router.post('/:campaignId/locations', ensureLogin, campaignsController.create);
+
 module.exports = router;

@@ -1,7 +1,23 @@
 <%- include('../partials/header') %>
+    <form id="deleteCampaign" action="/campaigns/<%= campaign._id %>?_method=DELETE" method="POST">
+        <h4>Confirm Campaign Deletion: <input type="checkbox" id="deleteCampaignConfirm" required></h4>
+        <input type="submit" value="DELETE" class="deleteCampaign">
+    </form>
     <h1><%= campaign.campaignTitle %></h1>
     <br>
     <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 800px;">
     <br>
     <h3><%= campaign.campaignDescription %></h3>
+    <br>
+    <form id="createLocation" action="/campaigns/<%= campaign._id %>/locations" method="POST">
+        <h3>Make new location</h3>
+        <h4>Title: </h4>
+        <input name="locationTitle" id="locationTitle" type="text" placeholder="Title" required>
+        <h4>Description: </h4>
+        <textarea name="locationDescription" id="locationDescription" placeholder="Description" required cols="30" rows="10"></textarea>
+        <br>
+        <input name="locationImage" id="locationImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+        <br>
+        <input type="submit" value="Create new location">
+    </form>
 <%- include('../partials/footer') %>
