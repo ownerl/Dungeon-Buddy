@@ -1,13 +1,18 @@
 <%- include('../partials/header') %>
 
     <h1>locations!!!! here and monster list test below</h1>
-    <h2><%=  %></h2>
-    <ul>
-        <% monsters.forEach(monster => { %>
-            <li>
-                <%= monster.name %>
-            </li>
-        <% }) %>
-    </ul>
+    <h2><%= location.locationTitle %></h2>
+    <h3><%= location.locationDescription %></h3>
+    <img src="<%= location.locationImage %>" alt="location image" style="width: 400px;">
+    <br>
+    <form>
+        <input list="monsterList" name="monsterList">
+        <datalist id="monsterList">
+            <% monsters.forEach(monster => { %>
+                <option value="<%= monster.slug %>"><%= monster.name %></option>
+            <% }) %>
+        </datalist>
+        <input type="submit" value="Add Monster">
+    </form>
 
 <%- include('../partials/footer') %>

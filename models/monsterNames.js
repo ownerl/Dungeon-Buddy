@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const monsterNameSchema = new Schema(
     {
         name: String,
+        slug: String,
     }
 );
 

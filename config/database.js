@@ -16,7 +16,7 @@ db.on('connected', async function() {
       .then((res) => res.json())
       .then((monstas) => {
         monstas.results.forEach(monster => {
-          MonsterName.create({ name: monster.name });
+          MonsterName.create({ name: monster.name, slug: monster.slug });
         })
       });
     }
