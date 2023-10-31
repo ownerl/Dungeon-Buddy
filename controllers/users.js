@@ -8,7 +8,7 @@ module.exports = {
 }
 
 async function index(req, res) {
-    let campaigns = await Campaign.find({});
+    const campaigns = await Campaign.find({});
     res.render("users/index", {
         campaigns,
         title: "Users",
@@ -30,7 +30,7 @@ async function create(req, res) {
     console.log(req.body);
     console.log(req.body.campaignTitle);
     
-    let newCampaign = Campaign.create(
+    const newCampaign = Campaign.create(
         {
             creatorId: req.user._id,
             campaignTitle: req.body.campaignTitle,

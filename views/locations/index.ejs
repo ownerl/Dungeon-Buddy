@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
-
+    <form id="deleteLocation" action="/locations/<%= campaign._id %>/<%= location._id %>?_method=DELETE" method="POST">
+        <h4>Confirm Location Deletion: <input type="checkbox" id="deleteLocationConfirm" required></h4>
+        <input type="submit" value="DELETE" class="deleteLocation">
+    </form>
     <h1>locations!!!! here and monster list test below</h1>
     <h2><%= location.locationTitle %></h2>
     <h3><%= location.locationDescription %></h3>
     <img src="<%= location.locationImage %>" alt="location image" style="width: 400px;">
     <br>
-    <form>
+    <form id="addMonster" action="/">
         <input list="monsterList" name="monsterList">
         <datalist id="monsterList">
             <% monsters.forEach(monster => { %>

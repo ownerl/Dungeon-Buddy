@@ -16,19 +16,22 @@
         <h4>Description: </h4>
         <textarea name="locationDescription" id="locationDescription" placeholder="Description" required cols="30" rows="10"></textarea>
         <br>
-        <input name="locationImage" id="locationImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+        <input name="locationImage" id="locationImage" type="text" placeholder="example: https://filehostingsite.com/imagefile.png" size="40">
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
         <br>
         <input type="submit" value="Create new location">
     </form>
     <div id="locationList">
         <ul>
-            <% campaign.locations.forEach(location => { %>
+            <% if (campaign.locations.length) { campaign.locations.forEach(location => { %>
                 <li>
                     <a href="/locations/<%= campaign._id %>/<%= location._id %>"><%= location.locationTitle %></a>
                     <br>
                     <img src="<%= location.locationImage %>" alt="location image" style="width: 300px">
                 </li>
-            <% }) %>
+            <% })} %>
         </ul>
     </div>
 <%- include('../partials/footer') %>
