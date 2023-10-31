@@ -35,5 +35,5 @@ async function deleteLocation(req, res) {
     const location = req.params.locationId;
     console.log('location ->>>>',location)
     console.log('campaign was deleted!')
-    res.redirect("/");
+    res.redirect(`/campaigns/${campaign._id}`);
 }
