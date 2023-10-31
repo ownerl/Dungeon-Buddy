@@ -13,14 +13,14 @@ async function index(req, res) {
     let error = null;
     res.render("campaigns/index", {
         campaign,
-        error, // <------------------------------ dry code? make ejs check if it exists instead?
+        error, 
     });
 }
 
 async function deleteCampaign(req, res) {
     const campaign = await Campaign.findOneAndDelete({ '_id': req.params.campaignId })
     console.log('campaign was deleted!')
-    campaign.save();
+    await campaign.save();
     res.redirect("/users");
 }
 
@@ -41,7 +41,7 @@ async function create(req, res) {
         locationImage: req.body.locationImage,
         campaignId: req.params.campaignId,
     });
-    campaign.save();
+    await campaign.save();
     // console.log(campaign)
     // console.log(campaign.locations)
     // let newLocation = Campaign.create(
@@ -56,3 +56,4 @@ async function create(req, res) {
     console.log('successfully made a new location');
     res.redirect(`/campaigns/${req.params.campaignId}`);
 }
+

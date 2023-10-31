@@ -30,7 +30,7 @@ async function create(req, res) {
     console.log(req.body);
     console.log(req.body.campaignTitle);
     
-    const newCampaign = Campaign.create(
+    let newCampaign = Campaign.create(
         {
             creatorId: req.user._id,
             campaignTitle: req.body.campaignTitle,

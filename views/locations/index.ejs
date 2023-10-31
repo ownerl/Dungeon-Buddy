@@ -8,14 +8,23 @@
     <h3><%= location.locationDescription %></h3>
     <img src="<%= location.locationImage %>" alt="location image" style="width: 400px;">
     <br>
-    <form id="addMonster" action="/">
-        <input list="monsterList" name="monsterList">
-        <datalist id="monsterList">
-            <% monsters.forEach(monster => { %>
-                <option value="<%= monster.slug %>"><%= monster.name %></option>
+    <form id="addMonster" action="/locations/<%= campaign._id %>/<%= location._id %>" method="POST">
+        <select name="monsterList" id="monsterList">
+            <% monstersList.forEach(monster => { %>
+                <option name="monsterSlug" value="<%= monster.slug %>@<%= monster.name %>"><%= monster.name %></option>
             <% }) %>
-        </datalist>
+        </select>
         <input type="submit" value="Add Monster">
     </form>
+    <br>
+    <div>
+        <ul>
+            <% monsters.forEach(monster => { %>
+                <li>
+                    <%= monster.name %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 
 <%- include('../partials/footer') %>
