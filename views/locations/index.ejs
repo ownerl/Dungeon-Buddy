@@ -3,11 +3,48 @@
         <h4>Confirm Location Deletion: <input type="checkbox" id="deleteLocationConfirm" required></h4>
         <input type="submit" value="DELETE" class="deleteLocation">
     </form>
-    <h1>locations!!!! here and monster list test below</h1>
-    <%- include('../partials/modal') %>
-    <h2><%= location.locationTitle %></h2>
+    <h1><%= location.locationTitle %></h1>
+    <br>
+    <img src="<%= location.locationImage %>" alt="location image" style="width: 800px;">
+    <br>
     <h3><%= location.locationDescription %></h3>
-    <img src="<%= location.locationImage %>" alt="location image" style="width: 400px;">
+    <br>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Edit Location Flavour
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Edit Location Flavour</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="updateLocation" action="/locations/<%= campaign._id %>/<%= location._id %>/update?_method=PUT" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">New Title</label>
+                            <input name="locationUpdateTitle" type="text" class="form-control" id="exampleFormControlInput1" value="<%= location.locationTitle %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">New Description</label>
+                            <textarea name="locationUpdateDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"><%= location.locationDescription %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">New Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
+                            <input name="locationUpdateImage" type="text" class="form-control" id="exampleFormControlInput1" value="<%= location.locationImage %>" pattern=".*\.(jpg|jpeg|png|gif)?$">                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <br>
     <form id="addMonster" action="/locations/<%= campaign._id %>/<%= location._id %>" method="POST">
         <select name="monsterList" id="monsterList">

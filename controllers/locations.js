@@ -65,6 +65,9 @@ async function removeMonster(req, res) {
 async function updateLocation(req, res) {
     const campaign = await Campaign.findOne({ _id: req.params.campaignId });
     const location = campaign.locations.id(req.params.locationId)
-    location.locationTitle = req.body.newLocationTitle;
-    location.locationDescription = req.body.newLocationTitle;
+    location.locationTitle = req.body.locationUpdateTitle;
+    location.locationDescription = req.body.locationUpdateDescription;
+    location.locationImage = req.body.locationUpdateImage;
+    await campaign.save();
+    res.redirect(`/locations/${req.params.campaignId}/${req.params.locationId}`);
 }

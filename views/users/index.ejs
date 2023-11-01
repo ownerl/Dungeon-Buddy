@@ -18,11 +18,13 @@
     <div id="campaignList">
         <ul>
             <% campaigns.forEach(campaign => { %>
-                <li>
-                    <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
-                    <br>
-                    <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
-                </li>
+                <% if (user?._id.equals(campaign.creatorId)) { %>
+                    <li>
+                        <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
+                        <br>
+                        <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
+                    </li>
+                <% } %>
             <% }) %>
         </ul>
     </div>

@@ -5,6 +5,7 @@ module.exports = {
     index,
     delete: deleteCampaign,
     create,
+    updateCampaign,
 };
 
 async function index(req, res) {
@@ -57,3 +58,11 @@ async function create(req, res) {
     res.redirect(`/campaigns/${req.params.campaignId}`);
 }
 
+async function updateCampaign(req, res) {
+    const campaign = await Campaign.findById( req.params.campaignId );
+    campaign.campaignTitle = req.body.campaignUpdateTitle;
+    campaign.campaignDescription = req.body.campaignUpdateDescription;
+    campaign.campaignImage = req.body.campaignUpdateImage;
+    await campaign.save();
+    res.redirect(`/campaigns/${req.params.campaignId}`);
+}

@@ -12,6 +12,6 @@ router.post('/:campaignId/:locationId', ensureLogin, locationsController.addMons
 
 router.put('/:campaignId/:locationId', ensureLogin, locationsController.removeMonster)
 
-router.put('/:campaignId/update/:locationId', ensureLogin, locationsController.updateLocation);
+router.put('/:campaignId/:locationId/update', ensureLogin, locationsController.updateLocation);
 
 module.exports = router;

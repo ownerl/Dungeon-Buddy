@@ -11,4 +11,6 @@ router.delete('/:campaignId', ensureLogin, campaignsController.delete);
 
 router.post('/:campaignId/locations', ensureLogin, campaignsController.create);
 
+router.put('/:campaignId', ensureLogin, campaignsController.updateCampaign);
+
 module.exports = router;
