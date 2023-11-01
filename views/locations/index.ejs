@@ -4,6 +4,7 @@
         <input type="submit" value="DELETE" class="deleteLocation">
     </form>
     <h1>locations!!!! here and monster list test below</h1>
+    <%- include('../partials/modal') %>
     <h2><%= location.locationTitle %></h2>
     <h3><%= location.locationDescription %></h3>
     <img src="<%= location.locationImage %>" alt="location image" style="width: 400px;">
@@ -22,9 +23,12 @@
             <% monsters.forEach(monster => { %>
                 <li>
                     <%= monster.name %>
+                    <form action="/locations/<%= campaign._id %>/<%= location._id %>?_method=PUT" method="POST">
+                        <input name="monsterId" type="text" value="<%= monster._id %>" hidden>
+                        <button type="submit" class="remove">X</button>
+                    </form>
                 </li>
             <% }) %>
         </ul>
     </div>
-
 <%- include('../partials/footer') %>

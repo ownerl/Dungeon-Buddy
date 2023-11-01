@@ -28,7 +28,7 @@ async function create(req, res) {
     const campaign = await Campaign.findById( req.params.campaignId );
     // console.log(req.body);
     // console.log(req.body.locationTitle);
-    let imageUrl = req.params.locationImage;
+    let imageUrl = req.body.locationImage;
     if (!validImageUrl(imageUrl)) {
         return res.render("campaigns/index", {
             campaign,
