@@ -42,21 +42,23 @@ Retrieves:
 | HTTP METHOD (_Verb_) | URL (_Nouns_)                      | CRUD        | Response                                                             | Notes          |
 | -------------------- | ---------------------------------- | ----------- | -------------------------------------------------------------------- | -------------- |
 | `users`              |                                    |             |                                                                      |                |
-| GET                  | `/users`                           | READ        | array of users                                                       | admin required |
+| GET                  | `/users/all`                       | READ        | array of users                                                       | Stretch goal, admin required |
 | GET                  | `/auth/google`                     | READ        | offload login to google                                              |                |
 | GET                  | `/auth2callback`                   | READ/CREATE | select in or add user to database after successful google oauth      |                |
-| DELETE               | `/users/:userId`                   | DESTROY     | destroy user with id of :userId                                      |                |
-| GET                  | `/users/:userId`                   | READ        | array of campaigns made by user with id of :userId & basic user info |                |
+| DELETE               | `/users/`                          | DESTROY     | destroy user with id of :userId                                      |                |
+| GET                  | `/users/`                          | READ        | array of campaigns made by user with id of :userId & basic user info |                |
 | POST                 | `/users/:userdId/campaigns`        | CREATE      | create a campaign under user with id of :userId                      |                |
 | `campaigns`          |                                    |             |                                                                      |                |
 | GET                  | `/campaigns/:campaignId`           | READ        | one campaign with id of :campaignId                                  |                |
 | DELETE               | `/campaigns/:campaignId`           | DESTROY     | destroy campaign with id of :campaignId                              |                |
-| GET                  | `/campaigns/:campaignId`           | READ        | array of locations                                                   |                |
 | POST                 | `/campaigns/:campaignId/locations` | CREATE      | create a location under campaign with id of :campaignId              |                |
+| PUT                  | `/campaigns/:campaignId`           | UPDATE      | edit campaign title, description, and image                          |                |
 | `locations`          |                                    |             |                                                                      |                |
-| DELETE               | `/locations/:locationId`           | DESTROY     | destroy genre from array of genres                                   |                |
-| GET                  | `/locations/:locationId`           | READ        | array of locations (sub-locations) & array of monsters               |                |
+| DELETE               | `/locations/:locationId`           | DESTROY     | destroy location from array of locations                             |                |
+| GET                  | `/locations/:locationId`           | READ        | one location with id of :locationId & array of monsters              |                |
 | POST                 | `/locations/:locationId`           | CREATE      | add monster to array of monsters                                     |                |
+| PUT                  | `/locations/:locationId`           | UPDATE      | remove monster from array of monsters                                |                |
+| PUT                  | `/locations/:locationId/update`    | UPDATE      | edit location title, description, and image                          |                |
 
 ## Wireframes
 
