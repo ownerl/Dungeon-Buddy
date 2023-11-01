@@ -1,3 +1,11 @@
+
+
+
+Color theme: 
+- #9E0707
+- #202524
+
+
 # Dungeon Buddy
 
 Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of events in their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations.

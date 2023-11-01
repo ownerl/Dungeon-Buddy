@@ -9,13 +9,19 @@
   <title>Dungeon Buddy</title>
 </head>
 <body>
-  <nav>
-    <% if (user) { %>
-      <a href="/logout">LOG OUT</a>
-      <a href="/users">PROFILE</a>
-    <% } else { %>
-      <a href="/auth/google">LOG IN</a>
-    <% } %>
-  </nav>
+  <header>
+    <img class="nav-logo" src="/images/DBLogoV2.png" alt="Dungeon Buddy Logo">
+    <a class="nav-name" href="/">Dungeon Buddy</a>
+    <nav class="nav-nav">
+      <ul class="nav-links">
+        <% if (user) { %>
+          <li><a href="/logout">LOG OUT</a></li>
+          <li><a href="/users">PROFILE</a></li>
+        <% } else { %>
+          <li><a href="/auth/google">LOG IN</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
   <main>
 
