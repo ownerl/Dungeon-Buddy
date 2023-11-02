@@ -19,8 +19,8 @@ Dungeon Buddy is a complementary web-app for dunegon masters to help plan out an
 - Hero art: freepik https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais
 - Default Campaign art: Feed The Multiverse https://feedthemultiverse.com/2018/07/15/basic-parchment-tolkien-style-fantasy-map-without-text-entire-terrain-designed-roleplaying-game/
 ## Color Themes
-- #9E0707
-- #202524
+-![#9E0707](https://placehold.co/15x15/9E0707/9E0707.png) `#9E0707`
+-![#202524](https://placehold.co/15x15/202524/202524.png) `#202524`
 
 
 # Project Planning & Initial Mockup
