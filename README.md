@@ -1,17 +1,30 @@
+# Dungeon Buddy
 
+Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations. Utilizing the Open5e API, users can quickly add monsters to their locations and view indepth information on them through a provided link. Future expansion of the Dungeon Buddy app will include in-house display of monster information.
 
+## Tech Used
+- HTML/CSS/EJS
+- JavaScript
+- Bootstrap
+- Open5e API
+- MongoDB
+- Mongoose
+- Node.js
+- Express
+- Passport
 
-Color theme: 
+## Credits
+- Hero art: freepik https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais
+- Default Campaign art: Feed The Multiverse https://feedthemultiverse.com/2018/07/15/basic-parchment-tolkien-style-fantasy-map-without-text-entire-terrain-designed-roleplaying-game/
+## Color Themes
 - #9E0707
 - #202524
 
 
-# Dungeon Buddy
-
+# Project Planning & Initial Mockup
 Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of events in their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations.
 
 ## API
-
 Dungeon Buddy will use the Open5e API to retrieve information on monsters.
 
 Example:
@@ -32,7 +45,6 @@ Retrieves:
 ```
 
 ## Tech Required
-
 - HTML/CSS
 - JavaScript
 - MongoDB
@@ -42,11 +54,9 @@ Retrieves:
 - Passport
 
 ## ERD
-
 ![ERD](public/images/dungeonbuddyerd.png "ERD")
 
 ## RESTful Routing Chart
-
 | HTTP METHOD (_Verb_) | URL (_Nouns_)                      | CRUD        | Response                                                             | Notes          |
 | -------------------- | ---------------------------------- | ----------- | -------------------------------------------------------------------- | -------------- |
 | `users`              |                                    |             |                                                                      |                |
@@ -69,19 +79,16 @@ Retrieves:
 | PUT                  | `/locations/:locationId/update`    | UPDATE      | edit location title, description, and image                          |                |
 
 ## Wireframes
-
 ![main page wireframe](public/images/dbwireframe1.png "wireframe")
 ![user's campaigns page wireframe](public/images/dbwireframe2.png "wireframe")
 ![campaign page wireframe](public/images/dbwireframe3.png "wireframe")
 ![location wireframe](public/images/dbwireframe5.png "wireframe")
 
 ## MVP Goal
-
 - Thematically appropriate page design
 - Log users in
 - Creation of campaigns
 - Creation of locations within campaigns
-- Nesting locations within locations
 - Removing locations from campaigns
 - Removing locations from other locations
 - Adding monsters to locations
@@ -90,19 +97,14 @@ Retrieves:
 - Store campaigns/locations/monsters in database
 
 ## Stretch Goals
-
 - Fluid access to information (reduce separate pages for information: cards, accordion, etc)
-- Keep track of health for individual monster instances
+- Nesting locations within locations
+- Display monster information for each monster
+- Keep track of health for individual monster instances for live running of D&D
 - Add other encounters/events: friendly-npc? shopkeeper, innkeeper, etc
 - Custom visuals for nav/buttons/etc
-- locations within locations
 
 ## Potential Roadblocks
-
 - Organizing the data retrieved from the API
 - Displaying data in an efficient manner
 
-## Credits
-
-- Hero art: freepik https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais
-- Default Campaign art: Feed The Multiverse https://feedthemultiverse.com/2018/07/15/basic-parchment-tolkien-style-fantasy-map-without-text-entire-terrain-designed-roleplaying-game/
