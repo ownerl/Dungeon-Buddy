@@ -2,7 +2,7 @@
 
 Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations. Utilizing the Open5e API, users can quickly add monsters to their locations and view indepth information on them through a provided link. Future expansion of the Dungeon Buddy app will include in-house display of monster information.
 
-### [Link to Dungeon Buddy](https://dungeon-buddy-ar-cd4d1e34fd17.herokuapp.com/ "Dungeon Buddy")
+### [Dungeon Buddy](https://dungeon-buddy-ar-cd4d1e34fd17.herokuapp.com/ "Dungeon Buddy")
 
 ## Tech Used
 - HTML/CSS/EJS
