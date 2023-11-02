@@ -99,7 +99,7 @@
     <div class="card-list">
         <% if (campaign.locations.length) { campaign.locations.forEach(location => { %>
             <article class="card">
-                <a class="card-title" href="/locations/<%= campaign._id %>/<%= location._id %>"><img class="card-image" src="<%= location.campaignImage %>" alt="location image"></a>
+                <a class="card-title" href="/locations/<%= campaign._id %>/<%= location._id %>"><img class="card-image" src="<%= location.locationImage %>" alt="location image"></a>
                 <a class="card-title" href="/locations/<%= campaign._id %>/<%= location._id %>"><%= location.locationTitle %></a>
                 <div class="card-description">
                     <p><%= location.locationDescription %></p>
