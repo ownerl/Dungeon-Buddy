@@ -91,6 +91,8 @@ header {
 }
 
 .top-level {
+    position: relative;
+    max-width: 60vw;
     margin-bottom: 1rem;
     padding: 2rem;
     background-color: #202524;
@@ -183,13 +185,17 @@ header {
 }
 
 .back {
-    position: relative;
-    right: 18%;
+    position: absolute;
+    left: 4%;
     font-size: 2rem;
     text-decoration: none;
     display: inline-block;
     font-family: 'Cinzel Decorative', serif;
     color: white;
+}
+
+.back:hover {
+    color: #9E0707;
 }
 
 .back img {

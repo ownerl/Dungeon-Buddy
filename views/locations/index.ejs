@@ -1,20 +1,36 @@
 <%- include('../partials/header') %>
-    <form id="deleteLocation" action="/locations/<%= campaign._id %>/<%= location._id %>?_method=DELETE" method="POST">
-        <h4>Confirm Location Deletion: <input type="checkbox" id="deleteLocationConfirm" required></h4>
-        <input type="submit" value="DELETE" class="deleteLocation">
-    </form>
-    <a href="/campaigns/<%= campaign._id %>"><--BACK</a>
-    <h1><%= location.locationTitle %></h1>
-    <br>
-    <img src="<%= location.locationImage %>" alt="location image" style="width: 800px;">
-    <br>
-    <h3><%= location.locationDescription %></h3>
-    <br>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Edit Location Flavour
-    </button>
-    
+    <div class="top-level">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-location">Delete Location</button>
+        <!-- Modal -->
+        <div class="modal fade" id="delete-location" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="delete-locationLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <form id="deleteLocation" action="/locations/<%= campaign._id %>/<%= location._id %>?_method=DELETE" method="POST">
+                        <div class="modal-body">
+                            <h5 class="modal-title" id="delete-locationLabel">Confirm Location Deletion: <input class="checkbox" type="checkbox" id="deleteLocationConfirm" required></h5>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" class="deleteLocation">Delete</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-level">
+        <a class="back" href="/campaigns/<%= campaign._id %>"><img src="/images/back.png" alt="Back"> Back</a>
+        <h1 class="title"><%= location.locationTitle %></h1>
+        <br>
+        <img class="main-image" src="<%= location.locationImage %>" alt="location image" style="width: 800px;">
+        <br>
+        <h3><%= location.locationDescription %></h3>
+        <br>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Edit Location Flavour
+        </button>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
