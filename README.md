@@ -24,7 +24,7 @@ Dungeon Buddy is a complementary web-app for dunegon masters to help plan out an
 - ![#9E0707](https://placehold.co/15x15/9E0707/9E0707.png) `#9E0707`
 - ![#c32727](https://placehold.co/15x15/c32727/c32727.png) `#c32727`
 
-- Font: Cinzel Decorative <span style="font-family: 'Cinzel Decorative' ; font-size:16px;">Cinzel Decorative</span>
+- Font: Cinzel Decorative
 
 # Project Planning & Initial Mockup
 Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of events in their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations.
