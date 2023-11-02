@@ -1,14 +1,10 @@
 <%- include('./partials/header') %>
-
-<h2>Home Page</h2>
-
-<% if (!user) { %>
-	<p>please login to continue</p>
-	<img src="<%= hero %>" alt="hero image">
-<% } else { %>
-	<p>Welcome, <%= user.name %> <%= user.email %></p>
-	<% if (user.avatar) { %>
-		<img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
+	<% if (!user) { %>
+		<a href="/auth/google" class="login-prompt">Please Log In Through GoOgle To Continue</a>
+	<% } else { %>
+			<h3>Are you ready to start your adventure, <%= user.name %>?</h3>
+			<% if (user.avatar) { %>
+				<img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
+			<% } %>
 	<% } %>
-<% } %>
 <%- include('./partials/footer') %>

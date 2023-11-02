@@ -101,3 +101,7 @@ Retrieves:
 
 - Organizing the data retrieved from the API
 - Displaying data in an efficient manner
+
+## Credits
+
+- Hero art: <a href="https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais">Image By freepik</a>

@@ -11,10 +11,9 @@ module.exports = {
 async function index(req, res) {
     const campaign = await Campaign.findById( req.params.campaignId );
     console.log('LOG OF CAMPAIGN ---> ', campaign);
-    let error = null;
     res.render("campaigns/index", {
         campaign,
-        error, 
+        error: null, 
     });
 }
 
@@ -30,6 +29,7 @@ async function create(req, res) {
     // console.log(req.body);
     // console.log(req.body.locationTitle);
     let imageUrl = req.body.locationImage;
+    console.log(req.body.locationImage);
     if (!validImageUrl(imageUrl)) {
         return res.render("campaigns/index", {
             campaign,

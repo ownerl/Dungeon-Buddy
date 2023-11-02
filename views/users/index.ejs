@@ -1,31 +1,49 @@
 <%- include('../partials/header') %>
-    <h3>USERS YAYYYY</h3>
-    <form id="deleteUser" action="/users/<%= user._id %>?_method=DELETE" method="POST">
-        <h4>Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h4>
-        <input type="submit" value="DELETE" class="deleteUser">
-    </form>
-    <form id="createCampaign" action="/users/<%= user._id %>/campaigns" method="POST">
-        <h3>Make new campaign</h3>
-        <h4>Title: </h4>
-        <input name="campaignTitle" id="campaignTitle" type="text" placeholder="Title" required>
-        <h4>Description: </h4>
-        <textarea name="campaignDescription" id="campaignDescription" placeholder="Description" required cols="30" rows="10"></textarea>
-        <br>
-        <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
-        <br>
-        <input type="submit" value="Create new campaign">
-    </form>
-    <div id="campaignList">
-        <ul>
-            <% campaigns.forEach(campaign => { %>
-                <% if (user?._id.equals(campaign.creatorId)) { %>
-                    <li>
-                        <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
-                        <br>
-                        <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
-                    </li>
-                <% } %>
-            <% }) %>
-        </ul>
+    <div>
+        <div class="top-level">
+            <h3><%= user.name %></h3>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete Profile</button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <form class="delete-form" id="deleteUser" action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                            <div class="modal-body">
+                                <h5 class="modal-title" id="staticBackdropLabel">Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h5>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-danger" value="DELETE" class="deleteUser">
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <form id="createCampaign" action="/users/<%= user._id %>/campaigns" method="POST">
+            <h3>Make new campaign</h3>
+            <h4>Title: </h4>
+            <input name="campaignTitle" id="campaignTitle" type="text" placeholder="Title" required>
+            <h4>Description: </h4>
+            <textarea name="campaignDescription" id="campaignDescription" placeholder="Description" required cols="30" rows="10"></textarea>
+            <br>
+            <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+            <br>
+            <input type="submit" value="Create new campaign">
+        </form>
+        <div id="campaignList">
+            <ul>
+                <% campaigns.forEach(campaign => { %>
+                    <% if (user?._id.equals(campaign.creatorId)) { %>
+                        <li>
+                            <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
+                            <br>
+                            <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
+                        </li>
+                    <% } %>
+                <% }) %>
+            </ul>
+        </div>
     </div>
 <%- include('../partials/footer') %>

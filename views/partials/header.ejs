@@ -10,18 +10,20 @@
 </head>
 <body>
   <header>
-    <img class="nav-logo" src="/images/DBLogoV2.png" alt="Dungeon Buddy Logo">
-    <a class="nav-name" href="/">Dungeon Buddy</a>
     <nav class="nav-nav">
+      <div>
+        <img class="nav-logo" src="/images/DBLogoV2.png" alt="Dungeon Buddy Logo">
+        <a class="nav-name" href="/">Dungeon Buddy</a>
+      </div>
       <ul class="nav-links">
         <% if (user) { %>
-          <li><a href="/logout">LOG OUT</a></li>
           <li><a href="/users">PROFILE</a></li>
+          <li><a href="/logout">LOG OUT</a></li>
         <% } else { %>
           <li><a href="/auth/google">LOG IN</a></li>
         <% } %>
       </ul>
     </nav>
   </header>
-  <main>
+<main>
 

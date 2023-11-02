@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 router.get('/', function(req, res, next) {
-    const splashImg = 'https://i.pinimg.com/originals/49/a4/7f/49a47f4aa2bad945b9d4905dec88b69c.jpg'
+    const splashImg = 'https://i.pinimg.com/originals/e6/52/be/e652be1d518df2f90172182ce813cc24.png'
     res.render('index', {
         title: 'Dungeon Buddy',
         hero: splashImg,
