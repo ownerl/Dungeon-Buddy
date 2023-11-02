@@ -60,7 +60,7 @@
         <% campaigns.forEach(campaign => { %>
             <% if (user?._id.equals(campaign.creatorId)) { %>
                 <article class="card">
-                    <img class="card-image" src="<%= campaign.campaignImage %>" alt="campaign image">
+                    <a class="card-title" href="/campaigns/<%= campaign._id %>"><img class="card-image" src="<%= campaign.campaignImage %>" alt="campaign image"></a>
                     <a class="card-title" href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
                     <div class="card-description">
                         <p><%= campaign.campaignDescription %></p>

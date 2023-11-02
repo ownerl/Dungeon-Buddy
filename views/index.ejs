@@ -2,9 +2,6 @@
 	<% if (!user) { %>
 		<a href="/auth/google" class="login-prompt">Please Log In Through GoOgle To Continue</a>
 	<% } else { %>
-			<h3>Are you ready to start your adventure, <%= user.name %>?</h3>
-			<% if (user.avatar) { %>
-				<img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
-			<% } %>
+		<a href="/users"  class="login-prompt">Are you ready to start your adventure, <%= user.name %>?</a>
 	<% } %>
 <%- include('./partials/footer') %>
