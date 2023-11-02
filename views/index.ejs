@@ -2,6 +2,6 @@
 	<% if (!user) { %>
 		<a href="/auth/google" class="login-prompt">Please Log In Through GoOgle To Continue</a>
 	<% } else { %>
-		<a href="/users"  class="login-prompt">Are you ready to start your adventure, <%= user.name %>?</a>
+		<a href="/users"  class="login-prompt">Are you ready to start your adventure<% let userName = user.name.split(' ') %> <%= userName[0] %>?</a>
 	<% } %>
 <%- include('./partials/footer') %>
