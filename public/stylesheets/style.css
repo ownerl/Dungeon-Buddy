@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -64,7 +64,7 @@ header {
 }
 
 .nav-links a:hover, .nav-name:hover{
-    color: #9E0707;
+    color: #c32727;
 }
 
 .error {
@@ -85,7 +85,7 @@ header {
 }
 
 .login-prompt:hover {
-    color: #9E0707;
+    color: #c32727;
     font-size: 2.2rem;
     padding: 2.2rem;
 }
@@ -175,7 +175,7 @@ header {
 }
 
 .card-title:hover {
-    color: #9E0707;
+    color: #c32727;
 }
 
 .title {
@@ -185,6 +185,7 @@ header {
 }
 
 .back {
+    transition: all 0.3s ease 0s;
     position: absolute;
     left: 4%;
     font-size: 2rem;
@@ -195,7 +196,7 @@ header {
 }
 
 .back:hover {
-    color: #9E0707;
+    color: #c32727;
 }
 
 .back img {
@@ -204,4 +205,70 @@ header {
 
 .main-image {
     margin-top: 1rem;
+}
+
+.accordion {
+    background-color: #202524;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.accordion-header {
+    position: relative;
+}
+
+button.accordion-button {
+    display: inline-block;
+    background-color: white;
+    color: black;
+}
+
+.accordion-item {
+    width: 30vw;
+}
+
+.remove {
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #9E0707;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 98;
+}
+
+.remove:hover {
+    color: black;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background-color: #c32727;
+}
+
+.btn {
+    border: none;
+    transition: all 0.3s ease 0s;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.btn:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn-danger {
+    background-color: #9E0707;
+    border-color: #9E0707;
+}
+
+.btn-danger:hover {
+    background-color: #c32727;
+    color: black;
 }

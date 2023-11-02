@@ -62,26 +62,37 @@
         </div>
     </div>
     <br>
-    <form id="addMonster" action="/locations/<%= campaign._id %>/<%= location._id %>" method="POST">
-        <select name="monsterList" id="monsterList">
-            <% monstersList.forEach(monster => { %>
-                <option name="monsterSlug" value="<%= monster.slug %>@<%= monster.name %>"><%= monster.name %></option>
-            <% }) %>
-        </select>
-        <input type="submit" value="Add Monster">
-    </form>
+    <div class="mid-level">
+        <form id="addMonster" action="/locations/<%= campaign._id %>/<%= location._id %>" method="POST">
+            <select name="monsterList" id="monsterList">
+                <% monstersList.forEach(monster => { %>
+                    <option name="monsterSlug" value="<%= monster.slug %>@<%= monster.name %>"><%= monster.name %></option>
+                <% }) %>
+            </select>
+            <input type="submit" value="Add Monster">
+        </form>
+    </div>
     <br>
-    <div>
-        <ul>
-            <% monsters.forEach(monster => { %>
-                <li>
-                    <%= monster.name %>
-                    <form action="/locations/<%= campaign._id %>/<%= location._id %>?_method=PUT" method="POST">
+    <div class="accordion" id="accordion-monsters">
+        <% if (monsters.length >= 1) { monsters.forEach(monster => { %>
+            <div class="accordion-item ">
+                <h3 class="accordion-header" id="heading-<%= monster.slug %>">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= monster.slug %>" aria-expanded="false" aria-controls="collapse-<%= monster.slug %>">
+                        <%= monster.name %>
+                    </button>
+                    <!-- second button here -->
+                    <form class="x-button" action="/locations/<%= campaign._id %>/<%= location._id %>?_method=PUT" method="POST">
                         <input name="monsterId" type="text" value="<%= monster._id %>" hidden>
                         <button type="submit" class="remove">X</button>
                     </form>
-                </li>
-            <% }) %>
-        </ul>
+                </h3>
+                <div id="collapse-<%= monster.slug %>" class="accordion-collapse collapse" aria-labelledby="heading-<%= monster.slug %>">
+                    <div class="accordion-body">
+                        <!-- monster description here -->
+                        <a href="https://open5e.com/monsters/<%= monster.slug %>" target="_blank">Information Page</a>
+                    </div>
+                </div>
+            </div>
+        <% })} %>
     </div>
 <%- include('../partials/footer') %>
