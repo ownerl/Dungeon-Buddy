@@ -94,12 +94,62 @@ header {
 .top-level {
     padding: 2rem;
     background-color: #202524;
+    border-radius: 2rem;
     color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.top-level h3 {
+    margin-top: 1rem;
+}
+
+.top-level button {
+    margin-top: 1rem;
 }
 
 .modal-content {
     color: white;
     background-color: #202524;
-    position: relative;
+    position: absolute;
     top: 30vh;
+}
+
+.create-view {
+    margin-top: 2rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    color: white;
+    background-color: #202524;
+}
+
+.card-list {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card {
+    flex-wrap: wrap;
+    width: 22vw;
+    margin: 0.5rem;
+    background-color: #202524;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+}
+
+.card-image {
+    max-width: 100%;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.card-title:hover {
+    color: #9E0707;
 }

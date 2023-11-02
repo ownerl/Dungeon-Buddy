@@ -1,49 +1,72 @@
 <%- include('../partials/header') %>
     <div>
         <div class="top-level">
+            <img src="<%= user.avatar %>" alt="<%= user.name %>'s avatar" />
             <h3><%= user.name %></h3>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete Profile</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-profile">Delete Profile</button>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="delete-profile" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="delete-profileLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <form class="delete-form" id="deleteUser" action="/users/<%= user._id %>?_method=DELETE" method="POST">
                             <div class="modal-body">
-                                <h5 class="modal-title" id="staticBackdropLabel">Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h5>
+                                <h5 class="modal-title" id="delete-profileLabel">Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h5>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-danger" value="DELETE" class="deleteUser">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger" class="deleteUser">Delete</button>
                         </form>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-        <form id="createCampaign" action="/users/<%= user._id %>/campaigns" method="POST">
-            <h3>Make new campaign</h3>
-            <h4>Title: </h4>
-            <input name="campaignTitle" id="campaignTitle" type="text" placeholder="Title" required>
-            <h4>Description: </h4>
-            <textarea name="campaignDescription" id="campaignDescription" placeholder="Description" required cols="30" rows="10"></textarea>
-            <br>
-            <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
-            <br>
-            <input type="submit" value="Create new campaign">
-        </form>
-        <div id="campaignList">
-            <ul>
-                <% campaigns.forEach(campaign => { %>
-                    <% if (user?._id.equals(campaign.creatorId)) { %>
-                        <li>
-                            <a href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
-                            <br>
-                            <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 300px">
-                        </li>
-                    <% } %>
-                <% }) %>
-            </ul>
+        <div class="create-view">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-campaign">
+                Create A New Campaign
+            </button>
+            <div class="modal fade" id="create-campaign" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="create-campaignLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <form id="createCampaign" action="/users/<%= user._id %>/campaigns" method="POST">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="campaignTitle" class="form-label">Title</label>
+                                    <br>
+                                    <input name="campaignTitle" id="campaignTitle" type="text" placeholder="Title" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="campaignDescription" class="form-label">Description</label>
+                                    <br>
+                                    <textarea name="campaignDescription" id="campaignDescription" placeholder="Description" required cols="50" rows="5"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="campaignImage" class="form-label">Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
+                                    <br>
+                                    <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Create</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="card-list">
+        <% campaigns.forEach(campaign => { %>
+            <% if (user?._id.equals(campaign.creatorId)) { %>
+                <article class="card">
+                    <img class="card-image" src="<%= campaign.campaignImage %>" alt="campaign image">
+                    <a class="card-title" href="/campaigns/<%= campaign._id %>"><%= campaign.campaignTitle %></a>
+                    <div class="card-description">
+                        <p><%= campaign.campaignDescription %></p>
+                    </div>
+                </article>
+            <% } %>
+        <% }) %>
     </div>
 <%- include('../partials/footer') %>

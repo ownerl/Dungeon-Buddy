@@ -20,7 +20,7 @@ async function index(req, res) {
 async function deleteCampaign(req, res) {
     const campaign = await Campaign.findOneAndDelete({ '_id': req.params.campaignId })
     console.log('campaign was deleted!')
-    await campaign.save();
+    console.log('campaign thingy')
     res.redirect("/users");
 }
 
