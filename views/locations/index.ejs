@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
     <div class="top-level">
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-location">Delete Location</button>
-        <!-- Modal -->
         <div class="modal fade" id="delete-location" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="delete-locationLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -26,12 +25,10 @@
         <br>
         <h3><%= location.locationDescription %></h3>
         <br>
-        <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             Edit Location Flavour
         </button>
     </div>
-    <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

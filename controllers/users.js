@@ -16,9 +16,7 @@ async function index(req, res) {
 };
 
 async function deleteUser(req, res) {
-    console.log(req.params.userId, ' <--- userID');
     const user = await User.findOne({ '_id': req.user._id });
-    console.log('before removal :', user);
     if (!user) return res.redirect('/');
     await User.findOneAndDelete({ '_id': req.user._id });
     res.redirect("../logout");
@@ -26,9 +24,6 @@ async function deleteUser(req, res) {
 
 async function create(req, res) {
     const campaigns = await Campaign.find({});
-    console.log('successfully made a new campaign');
-    console.log(req.body);
-    console.log(req.body.campaignTitle);
     let imageUrl = req.body.campaignImage;
     if (!validImageUrl(imageUrl)) {
         return res.render("users/index", {
