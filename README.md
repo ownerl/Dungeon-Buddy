@@ -18,12 +18,13 @@ Dungeon Buddy is a complementary web-app for dunegon masters to help plan out an
 ## Credits
 - Hero art: freepik https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais
 - Default Campaign art: Feed The Multiverse https://feedthemultiverse.com/2018/07/15/basic-parchment-tolkien-style-fantasy-map-without-text-entire-terrain-designed-roleplaying-game/
-## Color Themes
+## Style Themes
 
 - ![#202524](https://placehold.co/15x15/202524/202524.png) `#202524`
 - ![#9E0707](https://placehold.co/15x15/9E0707/9E0707.png) `#9E0707`
 - ![#c32727](https://placehold.co/15x15/c32727/c32727.png) `#c32727`
 
+- Font: Cinzel Decorative <span style="font-family: 'Cinzel Decorative' ; font-size:16px;">Cinzel Decorative</span>
 
 # Project Planning & Initial Mockup
 Dungeon Buddy is a complementary web-app for dunegon masters to help plan out and keep track of events in their campaigns. Users can create campaigns, locations within them, and assign monster encounters to those locations.
