@@ -12,7 +12,7 @@ module.exports = {
 
 async function index(req, res) {
     const monsterNames = await MonsterName.find({});
-    const campaign = await Campaign.findOne({ _id: req.params.campaignId });
+    const campaign = await Campaign.findOne({ '_id': req.params.campaignId });
     let location = campaign.locations.id(req.params.locationId);
     const monsters = location.monsters;
     res.render("locations/index", {
@@ -24,12 +24,15 @@ async function index(req, res) {
 }
 
 async function deleteLocation(req, res) {
-    const campaign = await Campaign.findOne({ _id: req.params.campaignId });
+    const campaign = await Campaign.findOne({ '_id': req.params.campaignId });
+    const location = req.params.locationId;
+    await campaign.locations.id(location).deleteOne();
+    await campaign.save();
     res.redirect(`/campaigns/${campaign._id}`);
 }
 
 async function addMonster(req, res) {
-    const campaign = await Campaign.findOne({ _id: req.params.campaignId });
+    const campaign = await Campaign.findOne({ '_id': req.params.campaignId });
     const location = campaign.locations.id(req.params.locationId)
     const newMonster = req.body.monsterList.split('@');
     location.monsters.push(
@@ -44,7 +47,7 @@ async function addMonster(req, res) {
 }
 
 async function removeMonster(req, res) {
-    const campaign = await Campaign.findOne({ _id: req.params.campaignId });
+    const campaign = await Campaign.findOne({ '_id': req.params.campaignId });
     const location = campaign.locations.id(req.params.locationId)
     location.monsters.remove(req.body.monsterId);
     await campaign.save();
@@ -52,7 +55,7 @@ async function removeMonster(req, res) {
 }
 
 async function updateLocation(req, res) {
-    const campaign = await Campaign.findOne({ _id: req.params.campaignId });
+    const campaign = await Campaign.findOne({ '_id': req.params.campaignId });
     const location = campaign.locations.id(req.params.locationId)
     location.locationTitle = req.body.locationUpdateTitle;
     location.locationDescription = req.body.locationUpdateDescription;

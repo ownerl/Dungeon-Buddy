@@ -185,9 +185,13 @@ header {
 }
 
 .back {
+    background-color: #202524;
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
     transition: all 0.3s ease 0s;
     position: absolute;
-    left: 4%;
+    left: 2rem;
+    top: -3rem;
     font-size: 2rem;
     text-decoration: none;
     display: inline-block;
@@ -270,5 +274,4 @@ button.accordion-button {
 
 .btn-danger:hover {
     background-color: #c32727;
-    color: black;
 }
