@@ -104,4 +104,5 @@ Retrieves:
 
 ## Credits
 
-- Hero art: <a href="https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais">Image By freepik</a>
+- Hero art: freepik https://www.freepik.com/free-ai-image/view-imposing-castle-with-natural-landscape_40572804.htm#query=fantasy%20castle%20art&position=0&from_view=search&track=ais
+- Default Campaign art: Feed The Multiverse https://feedthemultiverse.com/2018/07/15/basic-parchment-tolkien-style-fantasy-map-without-text-entire-terrain-designed-roleplaying-game/

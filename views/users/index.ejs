@@ -10,7 +10,7 @@
                     <div class="modal-content">
                         <form class="delete-form" id="deleteUser" action="/users/<%= user._id %>?_method=DELETE" method="POST">
                             <div class="modal-body">
-                                <h5 class="modal-title" id="delete-profileLabel">Confirm Profile Deletion: <input type="checkbox" id="deleteUserConfirm" required></h5>
+                                <h5 class="modal-title" id="delete-profileLabel">Confirm Profile Deletion: <input class="checkbox" type="checkbox" id="deleteUserConfirm" required></h5>
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -43,7 +43,7 @@
                                 <div class="mb-3">
                                     <label for="campaignImage" class="form-label">Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
                                     <br>
-                                    <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40">
+                                    <input name="campaignImage" id="campaignImage" type="text" placeholder="example: https://filehostingsite.com/imagefile" size="40" pattern=".*\.(jpg|jpeg|png|gif)?$">
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -1,19 +1,36 @@
 <%- include('../partials/header') %>
-    <form id="deleteCampaign" action="/campaigns/<%= campaign._id %>?_method=DELETE" method="POST">
-        <h4>Confirm Campaign Deletion: <input type="checkbox" id="deleteCampaignConfirm" required></h4>
-        <input type="submit" value="DELETE" class="deleteCampaign">
-    </form>
-    <a href="/users"><--BACK</a>
-    <h1><%= campaign.campaignTitle %></h1>
-    <br>
-    <img src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 800px;">
-    <br>
-    <h3><%= campaign.campaignDescription %></h3>
-    <br>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Edit Campaign Flavour
-    </button>
+    <div class="top-level">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-campaign">Delete Campaign</button>
+        <!-- Modal -->
+        <div class="modal fade" id="delete-campaign" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="delete-campaignLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <form id="deleteCampaign" action="/campaigns/<%= campaign._id %>?_method=DELETE" method="POST">
+                        <div class="modal-body">
+                            <h5 class="modal-title" id="delete-campaignLabel">Confirm campaign Deletion: <input class="checkbox" type="checkbox" id="deleteCampaignConfirm" required></h5>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger" class="deleteCampaign">Delete</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-level">
+        <a class="back" href="/users"><img src="/images/back.png" alt="Back"> Back</a>
+        <h1 class="title"><%= campaign.campaignTitle %></h1>
+        <br>
+        <img class="main-image" src="<%= campaign.campaignImage %>" alt="campaign image" style="width: 800px;">
+        <br>
+        <h3><%= campaign.campaignDescription %></h3>
+        <br>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Edit Campaign Flavour
+        </button>
+    </div>
     
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -39,36 +56,55 @@
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-success">Update</button>
                 </form>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    <form id="createLocation" action="/campaigns/<%= campaign._id %>/locations" method="POST">
-        <h3>Make new location</h3>
-        <h4>Title: </h4>
-        <input name="locationTitle" id="locationTitle" type="text" placeholder="Title" required>
-        <h4>Description: </h4>
-        <textarea name="locationDescription" id="locationDescription" placeholder="Description" required cols="30" rows="10"></textarea>
-        <br>
-        <input name="locationImage" id="locationImage" type="text" placeholder="example: https://filehostingsite.com/imagefile.png" size="40">
-        <% if (error) { %>
-            <p class="error"><%= error %></p>
-        <% } %>
-        <br>
-        <input type="submit" value="Create new location">
-    </form>
-    <div id="locationList">
-        <ul>
-            <% if (campaign.locations.length) { campaign.locations.forEach(location => { %>
-                <li>
-                    <a href="/locations/<%= campaign._id %>/<%= location._id %>"><%= location.locationTitle %></a>
-                    <br>
-                    <img src="<%= location.locationImage %>" alt="location image" style="width: 300px">
-                </li>
-            <% })} %>
-        </ul>
+    <div class="create-view">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-location">
+            Create A New Location
+        </button>
+        <div class="modal fade" id="create-location" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="create-locationLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form id="createLocation" action="/campaigns/<%= campaign._id %>/locations" method="POST">
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="locationTitle" class="form-label">Title</label>
+                                <br>
+                                <input name="locationTitle" id="locationTitle" type="text" placeholder="Title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="locationDescription" class="form-label">Description</label>
+                                <br>
+                                <textarea name="locationDescription" id="locationDescription" placeholder="Description" required cols="50" rows="5"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="locationImage" class="form-label">Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
+                                <br>
+                                <input name="locationImage" id="locationImage" type="text" placeholder="example: https://filehostingsite.com/imagefile.png" size="40" pattern=".*\.(jpg|jpeg|png|gif)?$">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-list">
+        <% if (campaign.locations.length) { campaign.locations.forEach(location => { %>
+            <article class="card">
+                <a class="card-title" href="/locations/<%= campaign._id %>/<%= location._id %>"><img class="card-image" src="<%= location.campaignImage %>" alt="location image"></a>
+                <a class="card-title" href="/locations/<%= campaign._id %>/<%= location._id %>"><%= location.locationTitle %></a>
+                <div class="card-description">
+                    <p><%= location.locationDescription %></p>
+                </div>
+            </article>
+        <% })} %>
     </div>
 <%- include('../partials/footer') %>

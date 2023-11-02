@@ -36,12 +36,15 @@ async function create(req, res) {
             error: "Invalid image URL. URL must end with .jpg, .jpeg, .png, or .gif.",
         });
     }
+    if (imageUrl.length < 1) {
+        imageUrl = "https://feedthemultiverse.com/wp-content/uploads/2018/07/ozzyflat.jpg";
+    }
     let newCampaign = Campaign.create(
         {
             creatorId: req.user._id,
             campaignTitle: req.body.campaignTitle,
             campaignDescription: req.body.campaignDescription,
-            campaignImage: req.body.campaignImage,
+            campaignImage: imageUrl,
             locations: [],
         }
     )

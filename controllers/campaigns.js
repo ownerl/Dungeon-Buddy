@@ -36,10 +36,13 @@ async function create(req, res) {
             error: "Invalid image URL. URL must end with .jpg, .jpeg, .png, or .gif.",
         });
     }
+    if (imageUrl.length < 1) {
+        imageUrl = "/images/default-location.png";
+    }
     campaign.locations.push({ 
         locationTitle: req.body.locationTitle,
         locationDescription: req.body.locationDescription,
-        locationImage: req.body.locationImage,
+        locationImage: imageUrl,
         campaignId: req.params.campaignId,
     });
     await campaign.save();

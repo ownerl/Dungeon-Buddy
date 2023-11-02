@@ -91,6 +91,15 @@ header {
 }
 
 .top-level {
+    margin-bottom: 1rem;
+    padding: 2rem;
+    background-color: #202524;
+    border-radius: 2rem;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.mid-level {
     padding: 2rem;
     background-color: #202524;
     border-radius: 2rem;
@@ -104,6 +113,13 @@ header {
 
 .top-level button {
     margin-top: 1rem;
+}
+
+.checkbox {
+    accent-color: #9E0707;
+    margin: 0.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .modal-content {
@@ -140,10 +156,17 @@ header {
 }
 
 .card-image {
+    transition: all 0.3s ease 0s;
+    opacity: 0.7;
     max-width: 100%;
 }
 
+.card-image:hover {
+    opacity: 1;
+}
+
 .card-title {
+    font-family: 'Cinzel Decorative', serif;
     font-size: 2rem;
     color: white;
     text-decoration: none;
@@ -151,4 +174,28 @@ header {
 
 .card-title:hover {
     color: #9E0707;
+}
+
+.title {
+    display: inline-block;
+    font-family: 'Cinzel Decorative', serif;
+    color: white;
+}
+
+.back {
+    position: relative;
+    right: 18%;
+    font-size: 2rem;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Cinzel Decorative', serif;
+    color: white;
+}
+
+.back img {
+    height: 3rem;
+}
+
+.main-image {
+    margin-top: 1rem;
 }
