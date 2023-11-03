@@ -108,6 +108,7 @@ Retrieves:
 - Keep track of health for individual monster instances for live running of D&D
 - Add other encounters/events: friendly-npc? shopkeeper, innkeeper, etc
 - Custom visuals for nav/buttons/etc
+- Add sub links for monster abilities
 
 ## Potential Roadblocks
 - Organizing the data retrieved from the API
