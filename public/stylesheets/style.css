@@ -244,7 +244,7 @@ button.accordion-button {
     background-color: #9E0707;
     top: 0.5rem;
     right: 1rem;
-    z-index: 98;
+    z-index: 97;
 }
 
 .remove:hover {
