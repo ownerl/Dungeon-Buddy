@@ -38,15 +38,15 @@
                 <form id="updateCampaign" action="/campaigns/<%= campaign._id %>?_method=PUT" method="POST">
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">New Title</label>
+                            <label for="exampleFormControlInput1" class="form-label">New Campaign Title</label>
                             <input name="campaignUpdateTitle" type="text" class="form-control" id="exampleFormControlInput1" value="<%= campaign.campaignTitle %>">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">New Description</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">New Campaign Description</label>
                             <textarea name="campaignUpdateDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"><%= campaign.campaignDescription %></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput2" class="form-label">New Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
+                            <label for="exampleFormControlInput2" class="form-label">New Campaign Image URL (ending with .jpg, .jpeg, .png, or .gif)</label>
                             <input name="campaignUpdateImage" type="text" class="form-control" id="exampleFormControlInput2" value="<%= campaign.campaignImage %>" pattern=".*\.(jpg|jpeg|png|gif)?$">                            
                         </div>
                     </div>
